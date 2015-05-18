@@ -1,12 +1,12 @@
-<a id="user-content-arcade-game" class="anchor" href="#arcade-game" aria-hidden="true"><span class="octicon octicon-link"></span></a>Frogger Arcade</h1>
+<h1>Frogger Arcade</h1>
 
-<p>Classic arcade game clone</p>
+<h1>Classic arcade game clone</h1>
 
-<p>Run</p>
-<p>Open Index.html on the web browser</p>
+<h2>Run</h2>
+<p>Open Index.html on the web browser.</p>
 
-<p>Play</p>
-<p>Use the arrow keys to move your character</p>
+<h2>Play</h2>
+<p>Use the arrow keys to move your character.</p>
 
 <h1>
 <a id="user-content-references" class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h1>
