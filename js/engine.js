@@ -50,8 +50,8 @@ var Engine = (function(global) {
          */
         if(!game.stop){
             win.requestAnimationFrame(main);
-        };
-    };
+        }
+    }
     /**
      * Sets a timer for the game.
      * @param {number} time Total seconds of the timer
@@ -66,7 +66,7 @@ var Engine = (function(global) {
         if (seconds === 0) {
             game.gameOver();
             game.stop = true;
-        };
+        }
         // If game's stop value is false, update timer and continue the game.
         if (!game.stop) {
             seconds--;
@@ -74,8 +74,8 @@ var Engine = (function(global) {
             win.setTimeout(function(){
                 setTimer(seconds, game);
             }, 1000); 
-        };
-    }; 
+        }
+    }
     /**
      * Updates the timer each second.
      * @return {void}
@@ -87,7 +87,7 @@ var Engine = (function(global) {
         tempSeconds -= tempMinutes * 60;
         timerStr = formatTimer(tempMinutes, tempSeconds);
         timer.innerHTML = timerStr;
-    };
+    }
     /**
      * Format timer string displayed in the game.
      * @param {number} minutes Remaining minutes of the timer
@@ -99,7 +99,7 @@ var Engine = (function(global) {
         var formattedSeconds = (seconds < 10) ? '0' + seconds : seconds;
 
         return formattedMinutes + ":" + formattedSeconds;
-    };
+    }
 
     /**
      * This function does some initial setup that should only occur once,
@@ -128,7 +128,7 @@ var Engine = (function(global) {
            var heading = doc.getElementById('heading');
            heading.parentNode.removeChild(heading);
        }; 
-    };
+    }
 
     /** 
      * This function is called by main (our game loop) and itself calls all
@@ -141,7 +141,7 @@ var Engine = (function(global) {
         game.checkCollisions();
         game.checkDestination();
         game.checkPlayerHelpers();
-    };
+    }
 
     /**
      * This is called by the update function and loops through all of the
@@ -156,7 +156,7 @@ var Engine = (function(global) {
         });
         game.player.update(dt);
         game.playerHelper.update(dt);
-    };
+    }
 
     /**
      * This function initially draws the "game level", it will then call
@@ -197,16 +197,16 @@ var Engine = (function(global) {
          */
         for (col = 0; col < numCols; col++) {
             ctx.drawImage(Resources.get(topRowImages[col]), col * 101, 0);
-        };
+        }
         
         for (row = 1; row < numRows; row++) {
             for (col = 0; col < numCols; col++) {
                 ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
-            };
-        };
+            }
+        }
 
         renderEntities();
-    };
+    }
 
     /**
      * This function is called by the render function and is called on each game
@@ -221,7 +221,7 @@ var Engine = (function(global) {
         game.player.render();            
         game.playerHelper.render();           
         game.render();          
-    };
+    }
 
     // Load all of the images.
     Resources.load([

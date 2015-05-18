@@ -73,7 +73,7 @@ Game.prototype.initEnemies = function() {
     enemy.speed = Math.floor(Math.random()*this.maxEnemySpeed + this.minEnemySpeed); 
     // Push each enemy to allEnemies array.
     this.allEnemies.push(enemy);
-  };
+  }
 };
 /**
  * Check if there are collisions between the player and enemies.
@@ -89,9 +89,9 @@ Game.prototype.checkCollisions = function() {
         this.life --;
         // Update life.
         document.getElementById('life').innerHTML = 'Life: ' + this.life;
-      };
-    };
-  };
+      }
+    }
+  }
 };
 /**
  * Change stats or enemies behavior after player collect items, and update stats.
@@ -113,12 +113,12 @@ Game.prototype.checkPlayerHelpers = function() {
       for (var i = 0; i < allEnemies.length; i++) {
         originalEnemySpeeds[i] = allEnemies[i].speed;
         allEnemies[i].speed = allEnemies[i].speed / 3;
-      };     
+      }     
       // Change back to original speed after one second.
       setTimeout(function() {
         for (var i = 0; i < originalEnemySpeeds.length; i++) {
           allEnemies[i].speed = originalEnemySpeeds[i];
-        }; 
+        } 
       }, 1000); 
     // If the player collects a green gem, add two points.
     } else if (this.playerHelper.sprite == 'images/Gem Green.png') {
@@ -132,11 +132,11 @@ Game.prototype.checkPlayerHelpers = function() {
     } else if (this.playerHelper.sprite == 'images/Rock.png') {
       this.life --;
       document.getElementById('life').innerHTML = 'Life: ' + this.life;
-    };
+    }
     // Once the player hit the helpers, move the helper off the screen.
     this.playerHelper.x = -100;
     this.playerHelper.y = -100;
-  };
+  }
 }; 
 /**
  * Check if player hit water or reach destination.
@@ -154,8 +154,8 @@ Game.prototype.checkDestination = function() {
       this.player.reset();
       this.life --;
       document.getElementById('life').innerHTML = 'Life: ' + this.life;
-    };
-  };
+    }
+  }
 };
 /**
  * Check if the game needs to be stopped. 
@@ -163,10 +163,10 @@ Game.prototype.checkDestination = function() {
  * @return {void}
  */
 Game.prototype.render = function() {
-  if(this.life == 0){
+  if(this.life === 0){
     this.stop = true;
     this.gameOver();
-  };
+  }
 };
 /**
  * Set the gameOver message.
@@ -183,7 +183,7 @@ Game.prototype.gameOver = function() {
     gameOverMessage.innerHTML = zeroLifeMessage + gameScoreMessage;
   } else {
     gameOverMessage.innerHTML = gameScoreMessage;
-  };    
+  }    
 };
 /**
  * Enemy class.
@@ -225,7 +225,7 @@ Enemy.prototype.update = function(dt) {
     // Randomnize enemy's y value every time enemy move off 
     // the screen and start from the begining again.
     this.y = this.enemyY[Math.round(Math.random()*3)];
-  }; 
+  } 
 };
 /**
  * Renders and draws the enemy on the screen.
@@ -404,5 +404,5 @@ Player.prototype.handleInput = function(key) {
       break;
     default:
       return;
-  };
+  }
 };
