@@ -404,5 +404,5 @@ Player.prototype.handleInput = function(key) {
       break;
     default:
       return;
-  }
+    }
 };

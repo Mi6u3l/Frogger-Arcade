@@ -23,6 +23,7 @@ var Engine = (function(global) {
      * @return {void}
      */
     function main() {
+        
         /**
          * Get our time delta information which is required if your game
          * requires smooth animation. Because everyone's computer processes
